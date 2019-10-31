@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_student_selection.*
 import org.firehound.messattendance.R
+import org.firehound.messattendance.fragments.DetailsFragment
+import org.firehound.messattendance.fragments.OwnerDetailsFragment
 import org.firehound.messattendance.fragments.OwnerFragment
 import org.firehound.messattendance.fragments.StudentFragment
 
@@ -18,10 +20,10 @@ class SelectionActivity : AppCompatActivity() {
 
         if (isStudent) {
             toolbar2.title = "Student options"
-            supportFragmentManager.beginTransaction().replace(R.id.frag_container, StudentFragment()).commit()
+            supportFragmentManager.beginTransaction().replace(R.id.frag_container, DetailsFragment()).commit()
         } else {
             toolbar2.title = "Owner options"
-            supportFragmentManager.beginTransaction().replace(R.id.frag_container, OwnerFragment()).commit()
+            supportFragmentManager.beginTransaction().replace(R.id.frag_container, OwnerDetailsFragment()).commit()
         }
     }
 }
